@@ -87,6 +87,7 @@ var dump = function () {
  */
 
 var getAccessToken = function (token, callback) {
+  console.log("getAccessToken");
   tokenModel
     .findOne({
       accessToken: token,
@@ -104,6 +105,8 @@ var getAccessToken = function (token, callback) {
 };
 
 var getClient = function (clientId, clientSecret, callback) {
+  console.log("getClient");
+
   clientModel
     .findOne({
       clientId: clientId,
@@ -122,6 +125,8 @@ var getClient = function (clientId, clientSecret, callback) {
 };
 
 var saveToken = function (token, client, user, callback) {
+  console.log("saveToken");
+
   token.client = {
     id: client.clientId,
   };
@@ -151,6 +156,8 @@ var saveToken = function (token, client, user, callback) {
  */
 
 var getUser = function (username, password, callback) {
+  console.log("getUser");
+
   userModel
     .findOne({
       username: username,
@@ -173,6 +180,8 @@ var getUser = function (username, password, callback) {
  */
 
 var getUserFromClient = function (client, callback) {
+  console.log("getUserFromClient");
+
   clientModel
     .findOne({
       clientId: client.clientId,
@@ -198,6 +207,8 @@ var getUserFromClient = function (client, callback) {
  */
 
 var getRefreshToken = function (refreshToken, callback) {
+  console.log("getRefreshToken");
+
   tokenModel
     .findOne({
       refreshToken: refreshToken,
@@ -215,6 +226,8 @@ var getRefreshToken = function (refreshToken, callback) {
 };
 
 var revokeToken = function (token, callback) {
+  console.log("revokeToken");
+
   tokenModel
     .deleteOne({
       refreshToken: token.refreshToken,
