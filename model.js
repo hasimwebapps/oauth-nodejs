@@ -245,4 +245,5 @@ module.exports = {
   getRefreshToken: getRefreshToken,
   revokeToken: revokeToken,
   loadExampleData: loadExampleData,
+  dump: dump,
 };

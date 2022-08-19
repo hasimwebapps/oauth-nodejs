@@ -29,6 +29,7 @@ mongoose.connect(
 
 // var _model = require("./model.js");
 // _model.loadExampleData()
+// _model.dump()
 
 app.oauth = new OAuth2Server({
   model: require("./model.js"),
